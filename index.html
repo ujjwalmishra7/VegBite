@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VegBite - Pure Vegetarian Food, Delivered Fresh</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%232f6b3a%22/><circle cx=%2250%22 cy=%2250%22 r=%2222%22 fill=%22%23fbf8f1%22/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+
+  <div class="loader">
+    <div class="loader__mark"></div>
+  </div>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand"><span class="veg-mark"></span> VegBite</a>
+
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="cart.html">Cart</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Login</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="nav-cart" aria-label="View cart">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="nav-cart__badge is-hidden" data-cart-count>0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__copy">
+          <span class="eyebrow"><span class="veg-mark"></span> 100% Pure Vegetarian</span>
+          <h1 class="hero__title">Home-style veg food,<br /><em>delivered fresh.</em></h1>
+          <p class="hero__subtitle">Thirty-eight comforting dishes across nine kitchens - North Indian thalis to
+            wok-fresh Chinese - ordered in a tap and on your table before it cools.</p>
+
+          <form class="search-bar"
+            onsubmit="event.preventDefault(); window.location.href='menu.html?search=' + encodeURIComponent(this.q.value);">
+            <i class="fa-solid fa-magnifying-glass" style="color: var(--ink-soft);"></i>
+            <input type="text" name="q" placeholder="Search paneer, dosa, pizza..." />
+            <button type="submit" aria-label="Search"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+
+          <div class="receipt">
+            <div><strong>38</strong><span>dishes</span></div>
+            <div><strong>9</strong><span>categories</span></div>
+            <div><strong>4.8 Star</strong><span>avg rating</span></div>
+          </div>
+        </div>
+
+        <div class="hero-photo" aria-hidden="true"><img src="images/hero-thali.jpg" alt="Fresh vegetarian thali"
+            onerror="this.src='images/placeholder-food.svg';"></div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">Browse</span>
+            <h2>Order by category</h2>
+          </div>
+          <a href="menu.html" class="btn btn--ghost">View full menu</a>
+        </div>
+        <div class="category-grid" id="category-grid"></div>
+      </div>
+    </section>
+
+    <!-- POPULAR -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">Crowd favourites</span>
+            <h2>Popular right now</h2>
+          </div>
+        </div>
+        <div class="rail" id="rail-popular"></div>
+      </div>
+    </section>
+
+    <!-- BEST SELLERS -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">Top rated</span>
+            <h2>Best sellers</h2>
+          </div>
+        </div>
+        <div class="rail" id="rail-bestsellers"></div>
+      </div>
+    </section>
+
+    <!-- TODAY'S SPECIAL -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">Chef's pick</span>
+            <h2>Today's special</h2>
+          </div>
+        </div>
+        <div class="menu-grid" id="rail-special"></div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">Why VegBite</span>
+            <h2>Why choose us</h2>
+          </div>
+        </div>
+        <div class="why-grid">
+          <div class="why-card" data-reveal>
+            <div class="why-card__icon"><i class="fa-solid fa-leaf"></i></div>
+            <h3>100% Pure Veg</h3>
+            <p>Every kitchen we partner with is certified pure vegetarian - no exceptions, no shared fryers.</p>
+          </div>
+          <div class="why-card" data-reveal>
+            <div class="why-card__icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Fast Delivery</h3>
+            <p>Hot food, on time - most orders reach you within 35-40 minutes of being placed.</p>
+          </div>
+          <div class="why-card" data-reveal>
+            <div class="why-card__icon"><i class="fa-solid fa-seedling"></i></div>
+            <h3>Fresh Ingredients</h3>
+            <p>Sourced daily from local markets, cooked to order, never sitting under a heat lamp.</p>
+          </div>
+          <div class="why-card" data-reveal>
+            <div class="why-card__icon"><i class="fa-solid fa-tags"></i></div>
+            <h3>Honest Pricing</h3>
+            <p>No hidden surge fees - the price on the card is the price at checkout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">Testimonials</span>
+            <h2>What our customers say</h2>
+          </div>
+        </div>
+        <div class="reviews-track" id="reviews-track"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="cta-band" data-reveal>
+        <h2>Hungry already?</h2>
+        <p>Browse the full menu and get a pure veg meal on its way in minutes.</p>
+        <a href="menu.html" class="btn btn--primary">Order Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><span class="veg-mark"></span> VegBite</div>
+          <p class="footer__about">A pure vegetarian food ordering experience - home-style comfort food from trusted
+            local kitchens, delivered fresh.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+            <li><a href="mailto:hello@vegbite.example">hello@vegbite.example</a></li>
+            <li><a href="about.html#contact">Find us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">© 2026 VegBite. All rights reserved. Made for pure veg food lovers.</div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+
+</html>
